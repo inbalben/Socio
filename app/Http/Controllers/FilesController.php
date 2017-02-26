@@ -38,5 +38,16 @@ class FilesController extends Controller {
 
         return back();
     }
+    
+    public function getFileList($branch_id) {
+        $file_list = FileList::all()->where('branch_id', '=', $branch_id)->last();
+        if(is_array($file_list->list)){
+            $files_play_list = $file_list->list;
+        }
+        else {
+            $files_play_list = json_decode($file_list->list);
+        }
+        return $files_play_list;
+    }
 
 }
