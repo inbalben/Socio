@@ -4,13 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/inbal/socio/socio/app/Console/Kernel.php</file>
-            <file>file:/C:/Users/inbal/socio/socio/app/Http/Controllers/BranchController.php</file>
             <file>file:/C:/Users/inbal/socio/socio/resources/views/layout/layout.blade.php</file>
+            <file>file:/C:/Users/inbal/socio/socio/app/Http/Controllers/BranchController.php</file>
             <file>file:/C:/Users/inbal/socio/socio/app/Console/Commands/createNewFileList.php</file>
+            <file>file:/C:/Users/inbal/socio/socio/resources/views/uploadFile.blade.php</file>
             <file>file:/C:/Users/inbal/socio/socio/routes/web.php</file>
-            <file>file:/C:/Users/inbal/socio/socio/app/File.php</file>
             <file>file:/C:/Users/inbal/socio/socio/app/Http/Controllers/FilesController.php</file>
-            <file>file:/C:/Users/inbal/socio/socio/app/FileList.php</file>
             <file>file:/C:/Users/inbal/socio/socio/resources/views/branch.blade.php</file>
             <file>file:/C:/Users/inbal/socio/socio/resources/views/ourwork.blade.php</file>
         </group>

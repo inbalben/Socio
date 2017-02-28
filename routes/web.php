@@ -22,4 +22,4 @@ Route::get('/uploadFile', function () {
     return view('uploadFile');
 });
 
-Route::post('/files', 'FilesController@store');
+Route::post('/uploadFile', 'FilesController@store');
