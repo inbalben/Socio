@@ -36,7 +36,7 @@
             <div class="content_container">
                 
                 
-                 <form method="post" action="/branch">
+                <form method="post" action="/branch">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <table>
                     <tr>
@@ -65,7 +65,7 @@
                     </tr>
 
                     <tr>
-                        <td><button class="button_small" type="submit"><a href="#">Save</a></button></td>
+                        <td><button class="button_small" type="submit"><a>Save</a></button></td>
                     </tr>
 
                 </table>
