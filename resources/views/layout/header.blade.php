@@ -1,12 +1,13 @@
 <header>
+    @include ('layout\auth')
     <nav>
         <div id="menubar">
             <ul id="nav">
                 <li class="current"><a href="/">Home</a></li>
                 <li><a href="ourwork">Our Work</a></li>
                 <li><a href="uploadFile">Upload file</a></li>
-                <li><a href="contact">Contact Us</a></li>
-                <li><a href="branch">branch</a></li>
+                <li><a href="branch">Branch</a></li>
+                <li><a href="permission">Permission</a></li>
             </ul>
         </div><!--close menubar-->	
     </nav>

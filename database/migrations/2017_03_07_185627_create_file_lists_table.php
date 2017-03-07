@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFileListTable extends Migration
+class CreateFileListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,7 +18,7 @@ class CreateFileListTable extends Migration
             $table->integer('branch_id');
             $table->string('status');
             $table->text('list');
-            $table->timestamps();
+            $table->timestamps();;
         });
     }
 
@@ -29,6 +29,6 @@ class CreateFileListTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('file_lists');
     }
 }

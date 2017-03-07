@@ -13,6 +13,7 @@ class FilesController extends Controller {
     
     public function index() {
         $file_lists = DB::table('file_lists')->latest()->get();
+        $files_play_list = [];
        foreach($file_lists as $file_list){
            $files_play_list = json_decode($file_list->list);
        }

@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\FileList;
+use App\File_list;
 
 class createNewFileList extends Command
 {
@@ -46,6 +46,6 @@ class createNewFileList extends Command
                 $files_play_list[] = $file;
             }
 
-            FileList::create(['branch_id' => 1, 'status' => 'active', 'list' => json_encode($files_play_list)]);
+            File_list::create(['branch_id' => 1, 'status' => 'active', 'list' => json_encode($files_play_list)]);
     }
 }

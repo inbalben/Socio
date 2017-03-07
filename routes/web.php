@@ -13,11 +13,18 @@ Route::get('/branch', 'BranchController@index');
 
 Route::post('/branch', 'BranchController@store');
 
+Route::get('/permission', 'PermissionController@index');
+
+Route::post('/permission', 'PermissionController@store');
+
 Route::get('/ourwork', 'FilesController@index');
 
+Route::post('/files', 'FilesController@store');
+
+Route::get('/home', 'HomeController@index');
 
 Route::get('/uploadFile', function () {
     return view('uploadFile');
 });
 
-Route::post('/files', 'FilesController@store');
+Auth::routes();

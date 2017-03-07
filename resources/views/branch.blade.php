@@ -65,7 +65,7 @@
                     </tr>
 
                     <tr>
-                        <td><button class="button_small" type="submit"><a href="#">Save</a></button></td>
+                        <td><button class="button_small" type="submit"><a>Save</a></button></td>
                     </tr>
 
                 </table>
