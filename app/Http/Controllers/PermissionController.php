@@ -9,8 +9,8 @@ use App\Permission;
 class PermissionController extends Controller
 {
     public function index() {
-         $permissions = Permission::all();
-         return view('permission', compact('permissions'));
+        $permissions = Permission::all();
+        return view('permission', compact('permissions'));
      }
      
      public function store() {

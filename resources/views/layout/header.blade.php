@@ -8,6 +8,7 @@
                 <li><a href="uploadFile">Upload file</a></li>
                 <li><a href="branch">Branch</a></li>
                 <li><a href="permission">Permission</a></li>
+                <li><a href="users">Users</a></li>
             </ul>
         </div><!--close menubar-->	
     </nav>

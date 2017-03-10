@@ -19,6 +19,19 @@ class CreatePermissionsTable extends Migration
             $table->string('slug');
             $table->timestamps();
         });
+        
+        DB::table('permissions')->insert(
+                ['name' => 'update permission','slug' => 'permission.update']);
+        DB::table('permissions')->insert(
+                ['name' => 'show permission','slug' => 'permission.show']);
+        DB::table('permissions')->insert(
+                ['name' => 'update branch','slug' => 'branch.update']);
+        DB::table('permissions')->insert(
+                ['name' => 'show branch','slug' => 'branch.show']);
+        DB::table('permissions')->insert(
+                ['name' => 'update file','slug' => 'file.update']);
+        DB::table('permissions')->insert(
+                ['name' => 'show file','slug' => 'file.show']);
     }
 
     /**

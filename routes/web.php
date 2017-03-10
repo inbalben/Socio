@@ -23,6 +23,10 @@ Route::post('/files', 'FilesController@store');
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/users', 'UsersController@index');
+
+Route::post('/users_permissions', 'UsersController@storePermissions');
+
 Route::get('/uploadFile', function () {
     return view('uploadFile');
 });

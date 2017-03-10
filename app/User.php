@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    public function usersACL(){
+        return $this->hasMany(Users_ACL::class);
+    }
 }
