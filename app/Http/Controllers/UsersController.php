@@ -25,10 +25,15 @@ class UsersController extends Controller
      
      public function storePermissions() {
 
-        Users_ACL::create([
-            'user_id' => request('user_id'),
-            'acl_slug' => request('acl_slug')
-        ]);
+        if(isset($_POST['save'])){
+            Users_ACL::create([
+               'user_id' => request('user_id'),
+               'acl_slug' => request('acl_slug')
+           ]);
+        }
+        else{
+            Users_ACL::where('user_id', '=', request('user_id'))->where('acl_slug', '=', request('acl_slug'))->delete();
+        }
 
         return back();
      }
