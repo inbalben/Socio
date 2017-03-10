@@ -45,9 +45,10 @@ class createNewFileList extends Command
         foreach ($branches as $branch) {
             $files_play_list = [];
             foreach ($files as $file) {
-                $files_play_list[] = $file->name;
+                if($file->branch->type != $branch->type){
+                    $files_play_list[] = $file->name;
+                }
             }
-var_dump($files_play_list);
             File_list::create(['branch_id' => $branch->id, 'status' => 'active', 'list' => json_encode($files_play_list)]);
         }
     }
