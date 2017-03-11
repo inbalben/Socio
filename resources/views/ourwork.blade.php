@@ -18,18 +18,17 @@
                     videoPlayer = document.getElementById("ss");
                     video = document.getElementById("myVideo");
                     video_count = -1;
-                    video_play_list = <?php echo json_encode($files_play_list); ?>;
+                    video_play_list = <?php echo ($files_play_list); ?>;
                     console.log(video_play_list);
                     run();
+                    
                     function run() {
-
                         video_count++;
                         if (video_count == video_play_list.length)
                             video_count = 0;
                         videoPlayer.setAttribute("src", "video/" + video_play_list[video_count]);
                         video.load();
                         video.play();
-
                     }
 
                 </script>		  

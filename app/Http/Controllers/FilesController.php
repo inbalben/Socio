@@ -2,22 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use DB;
 use App\File;
 use App\FileList;
-use DB;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 class FilesController extends Controller {
 
     
     public function index() {
-        $file_lists = DB::table('file_lists')->latest()->get();
-        $files_play_list = [];
-       foreach($file_lists as $file_list){
-           $files_play_list = json_decode($file_list->list);
-       }
-
+        $file_list = DB::table('file_lists')->select('list')->latest()->first();
+        $files_play_list = $file_list->list;
         return view('ourwork', compact('files_play_list'));
     }
     
@@ -25,9 +21,9 @@ class FilesController extends Controller {
         $fileName = Input::file('file')->getClientOriginalName();
         $tmpName =  Input::file('file')->getFilename();
         $fileSize = Input::file('file')->getClientSize();
-        $fileType =  Input::file('file')->getClientMimeType();
+        $fileType = Input::file('file')->getClientMimeType();
 
-         Input::file('file')->move('video',Input::file('file')->getClientOriginalName());
+        Input::file('file')->move('video',Input::file('file')->getClientOriginalName());
 
         File::create([
             'name' => $fileName,
