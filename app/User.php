@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -29,5 +30,17 @@ class User extends Authenticatable
     
     public function usersACL(){
         return $this->hasMany(Users_ACL::class);
+    }
+    
+ 
+    public function hasPermission($slug){
+        $user = Auth::user();
+        $userACL = Users_ACL::where('user_id', '=', $user->id)->get();
+        foreach($userACL as $acl){
+            if($acl->acl_slug == $slug){
+                return true;
+            }
+        }
+        return false;
     }
 }

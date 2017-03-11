@@ -4,39 +4,39 @@
 @section ('content')
 
 
-    <div id="content">
-        <div class="content_item">
-            <table class="table table-striped table-bordered table-hover table-condensed table-nonfluid">
-                        <thead>
-                            <tr>
-                                <td>#</td>
-                                <td>Company</td>
-                                <td>Type</td>
-                                <td>User id</td>
-                                <td>City</td>
-                                <td>Street</td>
-                            </tr>
-                        </thead>
+<div id="content">
+    <div class="content_item">
+        <table class="table table-striped table-bordered table-hover table-condensed table-nonfluid">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Company</td>
+                    <td>Type</td>
+                    <td>User id</td>
+                    <td>City</td>
+                    <td>Street</td>
+                </tr>
+            </thead>
 
-                        @foreach ($branches as $branch)
-                        <tbody>
-                            <tr>
-                                <td> {{$branch->id }}</td>
-                                <td> {{$branch->company }}</td>
-                                <td> {{$branch->type }}</td>
-                                <td> {{$branch->user_id }}</td>
-                                <td> {{$branch->city }}</td>
-                                <td> {{$branch->street }}</td>
-                            </tr>
-                        </tbody>
+            @foreach ($branches as $branch)
+            <tbody>
+                <tr>
+                    <td> {{$branch->id }}</td>
+                    <td> {{$branch->company }}</td>
+                    <td> {{$branch->type }}</td>
+                    <td> {{$branch->user_id }}</td>
+                    <td> {{$branch->city }}</td>
+                    <td> {{$branch->street }}</td>
+                </tr>
+            </tbody>
 
-                        @endforeach
-                    </table>    
+            @endforeach
+        </table>    
 
-            <div class="content_container">
-                
-                
-                 <form method="post" action="/branch">
+        <div class="content_container">
+
+
+            <form method="post" action="/branch">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <table>
                     <tr>
@@ -70,10 +70,10 @@
 
                 </table>
             </form>
-                               
-            </div><!--close content_container-->			  
-        </div><!--close content_item-->
-    </div><!--close content--> 
+
+        </div><!--close content_container-->			  
+    </div><!--close content_item-->
+</div><!--close content--> 
 
 
-    @endsection
+@endsection
