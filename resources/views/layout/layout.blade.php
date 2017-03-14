@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="css/app.css" />
         <!-- modernizr enables HTML5 elements and feature detects -->
         <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+        <script type = "text/javascript" src = "//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" ></script>
     </head>
 
     <body>

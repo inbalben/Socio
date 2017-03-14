@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\FileList;
+use App\Branch;
+use App\File;
 
 class createNewFileList extends Command
 {
@@ -38,14 +40,29 @@ class createNewFileList extends Command
      */
     public function handle()
     {
-        $dir = public_path().'\video';
+        /*$dir = public_path().'\video';
         $files = scandir($dir);
+        $files_play_list = [];
+        foreach ($files as $file) {
+             if($file == "." || $file == "..") continue;
+            $files_play_list[] = $file;
+        }*/(
+        $branches = branch::all());
+        $files = File::all();
+        
+        foreach ($branches as $branch){
             $files_play_list = [];
             foreach ($files as $file) {
-                 if($file == "." || $file == "..") continue;
-                $files_play_list[] = $file;
+                if($file->branch['type'] == $branch->type){
+                    continue;
+                }
+                if($file->branch_id != $branch->id){
+                    $files_play_list[] = $file->name;
+                }
             }
 
-            FileList::create(['branch_id' => 1, 'status' => 'active', 'list' => json_encode($files_play_list)]);
+            FileList::create(['branch_id' => $branch->id, 'status' => 'active', 'list' => json_encode($files_play_list)]);
+        } 
+       
     }
 }
